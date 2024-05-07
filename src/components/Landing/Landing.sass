@@ -1,0 +1,70 @@
+// .landing
+// 	height: clamp(404px, 5vh, 550px)
+// 	background-color: white
+@import "./../../styles/_option.sass"
+
+// .image
+// 	height: 505px
+// 	margin: 0 auto !important
+
+// 	background-image: url('./../../public/flowers.svg')
+// 	background-position: 0 
+// 	background-repeat: no-repeat
+// 	background-size: 100
+.landing 
+	width: 100%
+	// height: clamp(404px, 50vh, 505px)
+	height: 505px
+	display: grid
+	align-items: center
+	.landing__back
+		position: absolute
+		top: 60px
+		height: 505px
+		// height: clamp(404px, 50vh, 505px)
+		width: 100%
+		object-fit: cover
+		filter: opacity(50%)
+		z-index: 1
+
+	.landing-wrap
+		position: relative
+		z-index: 2
+
+		color: $color
+		width: min(635px, 87%)
+		margin-left: 13%
+		opacity: 1 !important
+		h1
+			font-family: $fontAccent
+			font-size: 60px 
+			font-weight: 700
+
+		p
+			margin-top: 28px
+			font-size: 16px 
+
+		.more
+			margin-top: 24px
+			@include more($bgDark: true)
+	
+
+// 	width: 100%
+// 	// height: 505px !important
+
+// 	position: absolute
+// 	top: 60px
+// 	left: 0
+// 	right: 0
+
+// 	display: flex
+// 	align-items: center
+
+// 	pointer-events: none
+
+// 	background: rgba($background,0.6 )
+
+@media screen and (width <=552px)
+	.landing-wrap
+		p
+			display: none

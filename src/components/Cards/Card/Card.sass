@@ -1,0 +1,31 @@
+@import "./../../../styles/_option.sass"
+.card
+	height: 493px
+	border: 1px solid $background_shade
+	position: relative
+	.card__image
+		height: 180px
+		background-color: $background_shade 
+
+		display: flex
+		justify-content: center
+		align-items: center
+		svg
+			width: 120px
+	.card__text
+		padding: 16px
+		h1
+			font-weight: 700
+			font-family: $fontAccent
+			font-size: 24px
+		p
+			color: $gray
+			font-size: 16px
+			margin-bottom: 16px
+	.card__btn-cont
+		position: absolute
+		left: 16px
+		bottom: 24px
+		.card__btn
+			@include button($isSubmit: false)
+		

@@ -1,0 +1,29 @@
+@import "./../../styles/_option.sass"
+header
+	width: 100%
+	height: 60px
+	border-bottom: 0.1px solid rgba(0, 0, 0, 0.5)
+	.header__wrap
+		display: flex
+		justify-content: space-between
+		align-items: center
+		height: 100%
+
+		width: min(1500px, 98%)
+		margin: 0 auto
+		.header__nav
+			display: flex
+			align-items: center
+			column-gap: min(100px, 2vw)
+		.header__btn-group
+			display: flex
+			align-items: center
+			column-gap: 10px
+			svg
+				height: 30px !important
+				width: 30px !important
+				color: $accent
+
+@media screen and (width <= 552px)
+	.header__nav
+		display: none !important

@@ -1,0 +1,35 @@
+@import "./../../styles/_option.sass"
+.title
+	font: italic 700 48px $fontAccent
+	margin-bottom: 30px !important
+.artifacts 
+
+	display: flex
+	column-gap: 30px
+	justify-content: space-between
+	img
+		// width: 825px
+		// object-fit: cover
+		width: 100%
+	.artifacts__badge
+		background-color: $accent
+		width: 265px
+		color: black
+		padding: 16px
+
+		position: relative
+
+		h1
+			font: 700 24px $fontAccent
+			color: $background
+			margin-bottom: 20px !important
+		p
+			color: $green_text
+			margin-bottom: 20px !important
+		button
+			@include more($bgDark: false)
+			font-size: 16px !important
+	.badge__more
+		position: absolute
+		bottom: 24px
+			
