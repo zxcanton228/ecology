@@ -1,3 +1,5 @@
+import { motion } from "framer-motion"
+import { textAnim } from "../../types/anim.types"
 import More from "../../ui/More"
 import "./Landing.sass"
 const Landing = () => {
@@ -8,15 +10,22 @@ const Landing = () => {
 				className='landing__back'
 				alt='error'
 			/>
-			<section className='landing-wrap'>
-				<h1>Крупнейшая коллекция природных артефактов</h1>
-				<p>
+			<motion.section
+				initial='hidden'
+				whileInView='visible'
+				viewport={{ once: true }}
+				className='landing-wrap'
+			>
+				<motion.h1 custom={2} variants={textAnim}>
+					Крупнейшая коллекция природных артефактов
+				</motion.h1>
+				<motion.p custom={4} variants={textAnim}>
 					Являясь всего лишь частью общей картины, интерактивные прототипы,
 					которые представляют собой яркий пример европейского типа политической
 					и социальной культуры.
-				</p>
-				<More className='more' bgDark />
-			</section>
+				</motion.p>
+				<More custom={5} variants={textAnim} className='more' bgDark />
+			</motion.section>
 		</div>
 	)
 }

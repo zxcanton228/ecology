@@ -3,17 +3,8 @@
 // 	background-color: white
 @import "./../../styles/_option.sass"
 
-// .image
-// 	height: 505px
-// 	margin: 0 auto !important
-
-// 	background-image: url('./../../public/flowers.svg')
-// 	background-position: 0 
-// 	background-repeat: no-repeat
-// 	background-size: 100
 .landing 
 	width: 100%
-	// height: clamp(404px, 50vh, 505px)
 	height: 505px
 	display: grid
 	align-items: center
@@ -21,7 +12,6 @@
 		position: absolute
 		top: 60px
 		height: 505px
-		// height: clamp(404px, 50vh, 505px)
 		width: 100%
 		object-fit: cover
 		filter: opacity(50%)
@@ -37,9 +27,8 @@
 		opacity: 1 !important
 		h1
 			font-family: $fontAccent
-			font-size: 60px 
+			font-size: clamp(47px, 5vw, 60px) 
 			font-weight: 700
-
 		p
 			margin-top: 28px
 			font-size: 16px 

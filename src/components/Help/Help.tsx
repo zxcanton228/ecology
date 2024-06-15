@@ -1,84 +1,43 @@
-import { useForm } from "react-hook-form"
+import { motion } from "framer-motion"
+import { useFormContext } from "react-hook-form"
+import { textAnim } from "../../types/anim.types"
 import Button from "../../ui/Button"
 import Input from "../../ui/Input"
+import Title from "../../ui/Title"
 import "./Help.sass"
-interface IForm {
+export interface IForm {
 	name: string
 	email: string
 }
 
 const Help = () => {
-	const {
-		register,
-		handleSubmit,
-		reset,
-		formState: { errors },
-	} = useForm<IForm>({
-		mode: "onChange",
-	})
+	const { handleSubmit, reset } = useFormContext<IForm>()
 
-	const onSubmit = () => {
-		reset()
-	}
+	const onSubmit = () => reset()
 
 	return (
 		<div className='help'>
 			<img className='help__back' src='./../../../public/help.svg' alt='' />
-			<section className='container help-wrap'>
-				<h1 className='title'>Помочь проекту</h1>
-				<p>
+			<motion.section
+				initial='hidden'
+				whileInView='visible'
+				className='container help-wrap'
+			>
+				<Title custom={1} variants={textAnim} text='Помочь проекту' />
+				<motion.p custom={3} variants={textAnim}>
 					Равным образом, экономическая повестка сегодняшнего дня не даёт нам
 					иного выбора, кроме определения прогресса профессионального
 					сообщества. Как принято считать, элементы политического процесса
 					рассмотрены исключительно в разрезе маркетинговых и финансовых
 					предпосылок.
-				</p>
+				</motion.p>
 				<form onSubmit={handleSubmit(onSubmit)}>
-					{errors.name && (
-						<label className='input__error'>{errors.name?.message}</label>
-					)}
-					<Input
-						isEmail={false}
-						errors={errors}
-						placeholder='Имя'
-						register={register}
-						registerName='name'
-					/>
-					{errors.email && (
-						<label className='input__error'>{errors.email?.message}</label>
-					)}
-					<Input
-						isEmail={true}
-						errors={errors}
-						placeholder='Email'
-						register={register}
-						registerName='email'
-					/>
+					<Input custom={4} variants={textAnim} placeholder='Имя' />
+					<Input custom={5} variants={textAnim} isEmail />
 					<Button submit />
 				</form>
-			</section>
+			</motion.section>
 		</div>
-		// <form onSubmit={handleSubmit(onSubmit)}>
-		// 	<h1>{text}</h1>
-
-		// 	<Input
-		// 		errors={errors}
-		// 		placeholder='Имя'
-		// 		register={register}
-		// 		registerName='name'
-		// 		isEmail={false}
-		// 	/>
-		// 	<Input
-		// 		errors={errors}
-		// 		placeholder='Email'
-		// 		register={register}
-		// 		registerName='email'
-		// 		isEmail={true}
-		// 	/>
-
-		// 	{errors.name && <h1>{errors.name.message}</h1>}
-		// 	<button>Send</button>
-		// </form>
 	)
 }
 

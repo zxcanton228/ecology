@@ -11,25 +11,16 @@
 		// width: 825px
 		// object-fit: cover
 		width: 100%
-	.artifacts__badge
-		background-color: $accent
-		width: 265px
-		color: black
-		padding: 16px
-
-		position: relative
-
-		h1
-			font: 700 24px $fontAccent
-			color: $background
-			margin-bottom: 20px !important
-		p
-			color: $green_text
-			margin-bottom: 20px !important
-		button
-			@include more($bgDark: false)
-			font-size: 16px !important
-	.badge__more
-		position: absolute
-		bottom: 24px
-			
+	
+@media screen and (width <= 1100px)
+	.title
+		text-align: center
+	.artifacts
+		display: grid
+		row-gap: 10px
+		.artifacts__badge
+			width: 100%
+			min-height: 250px
+		.badge__more
+			bottom: 18px !important
+			right: 25px

@@ -1,29 +1,28 @@
-import More from "../../ui/More"
+import { motion } from "framer-motion"
+import { blockAnim } from "../../types/anim.types"
+import Title from "../../ui/Title"
 import "./Artifacts.sass"
+import { Badge } from "./Badge/Badge"
 const Artifacts = () => {
 	return (
 		<>
 			<div className='container'>
-				<h1 className='title'>Новые артефакты</h1>
+				<Title text='Новые артефакты' />
 			</div>
-			<section className='artifacts container'>
-				<img src='./../../public/artifacts.svg' alt='error' />
-				<section className='artifacts__badge'>
-					<h1>Kurische Nehrung 24</h1>
-					<p>
-						Вот вам яркий пример современных тенденций - начало повседневной
-						работы по формированию позиции выявляет срочную потребность методов
-						управления процессами.
-					</p>
-					<p>
-						Есть над чем задуматься: представители современных социальных
-						резервов своевременно верифицированы.
-					</p>
-					<div className='badge__more'>
-						<More text='Читать далее' />
-					</div>
-				</section>
-			</section>
+			<motion.section
+				initial='hidden'
+				whileInView='visible'
+				viewport={{ amount: 0.1, once: true }}
+				className='artifacts container'
+			>
+				<motion.img
+					custom={1}
+					variants={blockAnim}
+					src='./../../public/artifacts.svg'
+					alt='error'
+				/>
+				<Badge custom={3} variants={blockAnim} />
+			</motion.section>
 		</>
 	)
 }

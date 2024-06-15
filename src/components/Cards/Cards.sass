@@ -1,11 +1,18 @@
 .cards
-	
-	height: 555px
-
 	margin-top: 60px !important
+	.cards__mobile
+		display: none
+	.cards__pc
+		display: grid
+		justify-content: space-around
+		gap: 20px 30px
+		grid-template-columns: repeat(auto-fill, 330px)
 
-
-	display: grid
-	justify-content: space-around
-	gap: 20px 30px
-	grid-template-columns: repeat(auto-fill, 330px)
+@media screen and (width <= 720px)
+	.slick-arrow
+		width: 40px !important
+		height: 40px !important
+	.cards__mobile
+		display: block !important
+	.cards__pc
+		display: none !important

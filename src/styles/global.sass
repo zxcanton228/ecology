@@ -3,11 +3,12 @@
 @import "./_option.sass"
 @import "./reset.sass"
 
-body 
+body, html
 	background-color: $background
 	color: $color
 	font-family: $font
-	height: 100vh
+	height: 100%
+	max-width: 100vw !important
 a
 	color: $color
 	transition: color .3s
@@ -17,12 +18,13 @@ a
 
 #root
 	min-height: 100%
-	display: grid
-	grid-template-rows: auto 1fr auto
+	display: flex
+	flex-direction: column
 
-main 
-	width: 100%
-	height: 100%
+main
+	flex: 1 0 auto
+	overflow: hidden
+	padding-top: $headerHeight
 
 .container 
 	width: min(1590px, 97%)

@@ -1,0 +1,23 @@
+@import "./../../../styles/_option.sass"
+.artifacts__badge
+	background-color: $accent
+	width: 265px
+	color: black
+	padding: 16px
+
+	position: relative
+
+	h1
+		font: 700 clamp(12px, 5vw, 24px) $fontAccent
+		color: $background
+		margin-bottom: 20px !important
+	p
+		color: $green_text
+		margin-bottom: 20px !important
+		font-size: clamp(6px, 5vw, 16px)
+	button
+		@include more($bgDark: false)
+		font-size: 16px !important
+.badge__more
+	position: absolute
+	bottom: 24px
