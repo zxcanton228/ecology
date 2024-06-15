@@ -5,12 +5,7 @@ import App from "./App"
 import "./styles/global.sass"
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
-		<BrowserRouter
-			basename={
-				// @ts-ignore
-				process.env.NODE_ENV === "production" ? `/${process.env.DOMAIN}` : "/"
-			}
-		>
+		<BrowserRouter basename='/ecology'>
 			<App />
 		</BrowserRouter>
 	</React.StrictMode>
