@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { useFormContext } from "react-hook-form"
+import { IMG_URL } from "../../sys"
 import { textAnim } from "../../types/anim.types"
 import Button from "../../ui/Button"
 import Input from "../../ui/Input"
@@ -17,7 +18,7 @@ const Help = () => {
 
 	return (
 		<div className='help'>
-			<img className='help__back' src='./../../../public/help.svg' alt='' />
+			<img className='help__back' src={`${IMG_URL}help.svg`} alt='help' />
 			<motion.section
 				initial='hidden'
 				whileInView='visible'

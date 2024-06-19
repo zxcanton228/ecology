@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { IMG_URL } from "../../sys"
 import { blockAnim } from "../../types/anim.types"
 import Title from "../../ui/Title"
 import "./Artifacts.sass"
@@ -18,7 +19,7 @@ const Artifacts = () => {
 				<motion.img
 					custom={1}
 					variants={blockAnim}
-					src='./../../public/artifacts.svg'
+					src={`${IMG_URL}artifacts.svg`}
 					alt='error'
 				/>
 				<Badge custom={3} variants={blockAnim} />

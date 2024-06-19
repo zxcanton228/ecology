@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { IMG_URL } from "../../sys"
 import { textAnim } from "../../types/anim.types"
 import More from "../../ui/More"
 import "./Landing.sass"
@@ -6,7 +7,7 @@ const Landing = () => {
 	return (
 		<div className='landing'>
 			<img
-				src='./../../public/flowers.svg'
+				src={`${IMG_URL}flowers.svg`}
 				className='landing__back'
 				alt='error'
 			/>

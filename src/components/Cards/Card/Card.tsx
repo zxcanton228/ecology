@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { FC, LegacyRef, forwardRef } from "react"
+import { IMG_URL } from "../../../sys"
 import Button from "../../../ui/Button"
 import "./Card.sass"
 interface ICard {
@@ -12,11 +13,7 @@ const MCard: FC<ICard> = forwardRef(
 			return (
 				<section className='card' ref={ref}>
 					<section className='card__image'>
-						<img
-							loading='lazy'
-							src={`./../../../../public/images/${img}.svg`}
-							alt=''
-						/>
+						<img loading='lazy' src={`${IMG_URL}images/${img}.svg`} alt='' />
 					</section>
 					<div className='card__text'>
 						<h1>{title}</h1>
