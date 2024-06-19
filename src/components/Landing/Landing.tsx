@@ -4,12 +4,16 @@ import { textAnim } from "../../types/anim.types"
 import More from "../../ui/More"
 import "./Landing.sass"
 const Landing = () => {
+	const onLoad = () => {
+		return <h1>Загрузка...</h1>
+	}
 	return (
 		<div className='landing'>
 			<img
 				src={`${IMG_URL}flowers.svg`}
 				className='landing__back'
 				alt='error'
+				onLoad={onLoad}
 			/>
 			<motion.section
 				initial='hidden'
